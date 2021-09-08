@@ -5,14 +5,13 @@ import jp.co.axa.apidemo.entities.Employee;
 import java.util.List;
 
 public interface EmployeeService {
-
+	/*****************************read*****************************************/
     public List<Employee> retrieveEmployees();
-
-    public Employee getEmployee(Long employeeId);
-
-    public void saveEmployee(Employee employee);
-
-    public void deleteEmployee(Long employeeId);
-
-    public void updateEmployee(Employee employee);
+    public Employee getEmployee(Long id);    
+    /*****************************create****************************************/
+    public Employee createEmployee(Employee employee);
+    /*****************************delete****************************************/
+    public void deleteEmployee(Long id);
+    /*****************************update****************************************/
+    public Employee updateEmployee(Employee employee);
 }

@@ -1,7 +1,6 @@
 package jp.co.axa.apidemo.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,27 +11,52 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="EMPLOYEE")
-public class Employee {
+public class Employee implements Serializable{
 
-    @Getter
-    @Setter
+	private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
-    @Setter
-    @Column(name="EMPLOYEE_NAME")
+    @Column(name="EMPLOYEE_NAME",nullable = true)
     private String name;
 
-    @Getter
-    @Setter
-    @Column(name="EMPLOYEE_SALARY")
+    @Column(name="EMPLOYEE_SALARY",nullable = true)
     private Integer salary;
 
-    @Getter
-    @Setter
-    @Column(name="DEPARTMENT")
+    @Column(name="DEPARTMENT",nullable = true)
     private String department;
 
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Integer salary) {
+		this.salary = salary;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 }
