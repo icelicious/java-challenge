@@ -18,7 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http	.authorizeRequests()
+		/*http	.authorizeRequests()
 				//USER can only use GET APIs
             	.antMatchers(HttpMethod.GET,"/api/v1/**").hasRole("USER")
             	//ADMIN can fetch all URIs
@@ -29,17 +29,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             	.httpBasic();
 		//ignore csrf,need to check csrf token logic on prod
 		http.csrf().ignoringAntMatchers("/h2-console/**").ignoringAntMatchers("/api/v1/**");
-		http.headers().frameOptions().disable();
+		http.headers().frameOptions().disable();*/
 	}
   
    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 	   //for demo code,create two accounts
-	   auth
+	   /*auth
        .inMemoryAuthentication()
        .withUser("admin").password("{noop}admin").roles("ADMIN", "USER") 
        .and()
-       .withUser("spring").password("{noop}123456").roles("USER");
+       .withUser("spring").password("{noop}123456").roles("USER");*/
     }
 }
 
